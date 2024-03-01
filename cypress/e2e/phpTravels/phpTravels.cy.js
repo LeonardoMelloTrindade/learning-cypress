@@ -40,8 +40,6 @@ describe("PHPTravels", () => {
           .invoke("text")
           .then((text) => {
             number2 = text;
-            cy.log("Valor do input2 dentro do bloco then:", text);
-            cy.log(`n1: ${number1}`);
           });
       })
       .then(() => {
