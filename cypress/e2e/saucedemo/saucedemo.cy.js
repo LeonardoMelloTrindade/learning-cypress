@@ -1,11 +1,9 @@
-describe("Saucedemo", () => {
+
+describe("loginSaucedemo", () => {
   before(() => {
     cy.visit("https://www.saucedemo.com/");
-
-    cy.login();
-  })
-
-
+    cy.loginSaucedemo();
+  });
 
   it("should add an Sauce Labs Onesie to the cart", () => {
     cy.get("#item_2_title_link > .inventory_item_name").click();
