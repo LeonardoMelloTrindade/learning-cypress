@@ -46,15 +46,16 @@ Cypress.Commands.add("registerBugBank", (email, nome, senha) => {
   cy.get(
     ":nth-child(5) > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default"
   ).type(senha, { force: true });
+  cy.get('#toggleAddBalance').click({ force: true });
   cy.get(
     ".styles__ContainerFormRegister-sc-7fhc7g-0 > .style__ContainerButton-sc-1wsixal-0"
   ).click({ force: true });
   cy.get("#btnCloseModal").click({ force: true });
 });
 
-Cypress.Commands.add("loginBugBank", () => {
-  cy.get('.style__ContainerFormLogin-sc-1wbjw6k-0 > :nth-child(1) > .input__default').type('teste@teste.com');
-  cy.get('.style__ContainerFormLogin-sc-1wbjw6k-0 > .login__password > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default').type('123456')
+Cypress.Commands.add("loginBugBank", (email, password) => {
+  cy.get('.style__ContainerFormLogin-sc-1wbjw6k-0 > :nth-child(1) > .input__default').type(email);
+  cy.get('.style__ContainerFormLogin-sc-1wbjw6k-0 > .login__password > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default').type(password)
   cy.get('.otUnI').click();
 });
 
